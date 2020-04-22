@@ -2,7 +2,7 @@ class Api::V1::RankingPlayersController < ApplicationController
 
     def index
         ranking_players = RankingPlayer.all
-        render json: ranking_players, except: [:created_at, :updated_at]
+        render json: ranking_players, include: {:player => {except: [:id, :created_at, :updated_at]}}, except: [:created_at, :updated_at]
     end
 
     def show

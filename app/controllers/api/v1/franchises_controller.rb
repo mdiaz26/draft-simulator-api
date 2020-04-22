@@ -7,7 +7,7 @@ class Api::V1::FranchisesController < ApplicationController
 
     def show
         franchise = Franchise.find(params[:id])
-        render json: franchise.to_json(include: {franchise_players: => {except: [:created_at, :updated_at]}})
+        render json: franchise.to_json(include: {:franchise_players => {except: [:created_at, :updated_at]}})
     end
 
     def create

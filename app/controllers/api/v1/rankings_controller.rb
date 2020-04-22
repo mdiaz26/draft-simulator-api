@@ -7,7 +7,7 @@ class Api::V1::RankingsController < ApplicationController
 
     def show
         ranking = Ranking.find(params[:id])
-        render json: ranking.to_json(include: {:ranking_players => {except: [:created_at, :updated_at]}}, except: [:created_at, :updated_at])
+        render json: ranking.to_json(include: {:ranking_players => {include: {:player => {except: [:id, :created_at, :updated_at]}}, except: [:created_at, :updated_at]}}, except: [:created_at, :updated_at])
     end
 
     def create
