@@ -7,7 +7,7 @@ class Api::V1::DraftsController < ApplicationController
 
     def show
         draft = Draft.find(params[:id])
-        render json: draft.to_json(include: {:franchises => {only: [:id, :name]}})
+        render json: draft.to_json(include: [{:franchises => {only: [:id, :name]}}, :roster_config])
     end
 
     def create
