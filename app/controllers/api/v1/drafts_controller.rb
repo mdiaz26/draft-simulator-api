@@ -7,7 +7,7 @@ class Api::V1::DraftsController < ApplicationController
 
     def show
         draft = Draft.find(params[:id])
-        render json: draft.to_json(include: [{:franchises => {only: [:id, :name]}}, :roster_config])
+        render json: draft.to_json(include: [{:franchises => {include: :franchise_players}}, :roster_config])
     end
 
     def create
@@ -17,6 +17,12 @@ class Api::V1::DraftsController < ApplicationController
         else
             render error: {error: 'Unable to create draft'}, status: 400
         end
+    end
+
+    def draft_franchise_players
+        draft = Draft.find(params[:id])
+        players = draft.franchises.map{|franchise| franchise.franchise_players}.flatten
+        render json: players
     end
 
     def draft_params
