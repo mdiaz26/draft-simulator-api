@@ -25,6 +25,11 @@ class Api::V1::DraftsController < ApplicationController
         render json: players
     end
 
+    # def draft_franchises
+    #     draft = Draft.find(params[:id])
+    #     franchises
+    # end
+
     def draft_params
         params.require(:draft).permit(:id, :name, :roster_config_id)
     end

@@ -22,7 +22,8 @@ roster_config1 = RosterConfig.create(
     superflex: 1,
     def: 1,
     k: 1,
-    bench: 7
+    bench: 7,
+    flex: 0
 )
 
 require 'csv'

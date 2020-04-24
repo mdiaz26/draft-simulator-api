@@ -1,8 +1,8 @@
 class Api::V1::FranchisesController < ApplicationController
     
     def index
-        franchise = Franchise.all
-        render json: franchise.to_json
+        franchises = Franchise.all
+        render json: franchises.to_json(include: {:franchise_players => {include: :player, except: [:created_at, :updated_at]}})
     end
 
     def show
