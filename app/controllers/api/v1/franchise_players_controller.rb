@@ -2,18 +2,18 @@ class Api::V1::FranchisePlayersController < ApplicationController
 
     def index
         franchise_players = FranchisePlayer.all
-        render json: franchise_players.to_json(include: :player)
+        render json: franchise_players.to_json(include: [:player, :franchise])
     end
 
     def show
         franchise_player = FranchisePlayer.find(params[:id])
-        render json: franchise_player.to_json(include: :player)
+        render json: franchise_player.to_json(include: [:player, :franchise])
     end
 
     def create
         franchise_player = FranchisePlayer.new(franchise_player_params)
         if franchise_player.save
-            render json: franchise_player.to_json(include: :player)
+            render json: franchise_player.to_json(include: [:player, :franchise])
         else
             render error: {error: 'Unable to create franchise_player'}, status: 400
         end

@@ -22,7 +22,7 @@ class Api::V1::DraftsController < ApplicationController
     def draft_franchise_players
         draft = Draft.find(params[:id])
         players = draft.franchises.map{|franchise| franchise.franchise_players}.flatten
-        render json: players
+        render json: players.to_json(include: [:player, :franchise])
     end
 
     # def draft_franchises
