@@ -19,6 +19,12 @@ class Api::V1::RankingPlayersController < ApplicationController
         end
     end
 
+    def update
+        ranking_player = RankingPlayer.find(params[:id])
+        ranking_player.update(ranking_player_params)
+        render json: ranking_player.to_json(include: :player)
+    end
+
     def destroy
         ranking_player = RankingPlayer.find(params[:id])
         ranking_player.destroy

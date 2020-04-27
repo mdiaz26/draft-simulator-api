@@ -25,6 +25,12 @@ class Api::V1::RankingsController < ApplicationController
         render json: ranking
     end
 
+    def ranking_ranking_players
+        ranking = Ranking.find(params[:id])
+        ranking_players = ranking.ranking_players
+        render json: ranking_players.to_json(include: :player)
+    end
+
     def ranking_params
         params.require(:ranking).permit(:id, :name, :user_id)
     end

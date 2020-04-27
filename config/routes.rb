@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :drafts
 
       get 'drafts/:id/franchise_players', to: 'drafts#draft_franchise_players', as: 'draft_franchise_players'
+      get 'rankings/:id/ranking_players', to: 'rankings#ranking_ranking_players', as: 'ranking_ranking_players'
 
     end
   end
