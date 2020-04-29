@@ -13,7 +13,7 @@ class Api::V1::DraftsController < ApplicationController
     def create
         draft = Draft.new(draft_params)
         if draft.save
-            render json: draft.to_json
+            render json: draft.to_json(include: [{:franchises => {include: {:franchise_players => {include: :player}}}}, :roster_config])
         else
             render error: {error: 'Unable to create draft'}, status: 400
         end
