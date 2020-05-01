@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_22_175655) do
+ActiveRecord::Schema.define(version: 2020_04_29_205013) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 2020_04_22_175655) do
     t.bigint "draft_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "draft_position"
+    t.boolean "is_nominating"
     t.index ["draft_id"], name: "index_franchises_on_draft_id"
   end
 
