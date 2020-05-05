@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
       get 'drafts/:id/franchise_players', to: 'drafts#draft_franchise_players', as: 'draft_franchise_players'
       get 'rankings/:id/ranking_players', to: 'rankings#ranking_ranking_players', as: 'ranking_ranking_players'
+      post 'draft_franchises', to: 'franchises#create_draft_franchises', as: 'create_draft_franchises'
 
     end
   end

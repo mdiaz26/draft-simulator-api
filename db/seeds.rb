@@ -9,8 +9,8 @@
 # OAK = Franchise.create(name: "Oakland", budget: 300)
 # YON = Franchise.create(name: "Yonkers", budget: 300)
 
-RankingPlayer.delete_all
-Ranking.delete_all
+# RankingPlayer.delete_all
+# Ranking.delete_all
 FranchisePlayer.delete_all
 Franchise.delete_all
 Draft.delete_all
