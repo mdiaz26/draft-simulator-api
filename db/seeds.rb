@@ -10,30 +10,30 @@
 # YON = Franchise.create(name: "Yonkers", budget: 300)
 
 # RankingPlayer.delete_all
-# Ranking.delete_all
-FranchisePlayer.delete_all
-Franchise.delete_all
-Draft.delete_all
+Ranking.delete_all
+# FranchisePlayer.delete_all
+# Franchise.delete_all
+# Draft.delete_all
 
 
 rankings1 = Ranking.create(name: "Default Rankings")
 
 
 
-# roster_config1 = RosterConfig.create(
-#     name: "HFFL Rosters",
-#     qb: 1,
-#     rb: 2,
-#     wr: 3,
-#     te: 1,
-#     rb_wr: 1,
-#     wr_te: 1,
-#     superflex: 1,
-#     def: 1,
-#     k: 1,
-#     bench: 7,
-#     flex: 0
-# )
+roster_config1 = RosterConfig.create(
+    name: "HFFL Rosters",
+    qb: 1,
+    rb: 2,
+    wr: 3,
+    te: 1,
+    rb_wr: 1,
+    wr_te: 1,
+    superflex: 1,
+    def: 1,
+    k: 1,
+    bench: 7,
+    flex: 0
+)
 
 require 'csv'
 
@@ -41,13 +41,13 @@ csv_text = File.read(Rails.root.join('lib', 'seeds', 'fantasy-players-csv.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 
 # PLAYER CREATION
-# csv.each do |row|
-#     p = Player.new
-#     p.name = row['Player']
-#     p.position = row['Position']
-#     p.pro_team = row['NFL Team']
-#     p.save
-# end
+csv.each do |row|
+    p = Player.new
+    p.name = row['Player']
+    p.position = row['Position']
+    p.pro_team = row['NFL Team']
+    p.save
+end
 
 # DEFAULT RANKING_PLAYER CREATION
 csv.each do |row|
