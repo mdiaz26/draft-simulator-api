@@ -26,7 +26,7 @@ class Api::V1::FranchisePlayersController < ApplicationController
     end
 
     def franchise_player_params
-        params.require(:franchise_player).permit(:id, :player_id, :franchise_id, :salary)
+        params.require(:franchise_player).permit(:id, :player_id, :franchise_id, :salary, :tier)
     end
 
 end

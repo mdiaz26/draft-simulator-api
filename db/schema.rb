@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_29_205013) do
+ActiveRecord::Schema.define(version: 2020_05_14_215707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_04_29_205013) do
     t.integer "salary"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "tier"
     t.index ["franchise_id"], name: "index_franchise_players_on_franchise_id"
     t.index ["player_id"], name: "index_franchise_players_on_player_id"
   end
