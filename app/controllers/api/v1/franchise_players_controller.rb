@@ -11,6 +11,7 @@ class Api::V1::FranchisePlayersController < ApplicationController
     end
 
     def create
+        print franchise_player_params
         franchise_player = FranchisePlayer.new(franchise_player_params)
         if franchise_player.save
             render json: franchise_player.to_json(include: [:player, :franchise])
