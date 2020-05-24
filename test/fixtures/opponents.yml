@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  strategy: MyString
+  penalties: 1
+  team_name: MyString
+
+two:
+  name: MyString
+  strategy: MyString
+  penalties: 1
+  team_name: MyString

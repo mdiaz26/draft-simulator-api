@@ -1,13 +1,13 @@
-# VA = Franchise.create(name: "Virginia", budget: 300)
-# GK = Franchise.create(name: "Great Kills", budget: 300)
-# LIC = Franchise.create(name: "LIC", budget: 300)
-# NE = Franchise.create(name: "New England", budget: 300)
-# MARS = Franchise.create(name: "Mars", budget: 300)
-# HAR = Franchise.create(name: "Harlem", budget: 300)
-# FLU = Franchise.create(name: "Flushing", budget: 300)
-# CR = Franchise.create(name: "Capital Region", budget: 300)
-# OAK = Franchise.create(name: "Oakland", budget: 300)
-# YON = Franchise.create(name: "Yonkers", budget: 300)
+VA = Opponent.create(name: "Hua", team_name: "Virginia", penalties: 0, strategy: "4")
+GK = Opponent.create(name: "Dustin", team_name: "Great Kills", penalties: 0, strategy: "4")
+LIC = Opponent.create(name: "Warren", team_name: "LIC", penalties: 0, strategy: "6")
+NE = Opponent.create(name: "Wankyu", team_name: "New England", penalties: 0, strategy: "7")
+MARS = Opponent.create(name: "John", team_name: "Mars", penalties: 0, strategy: "3")
+HAR = Opponent.create(name: "Diaz", team_name: "Harlem", penalties: 0, strategy: "7")
+FLU = Opponent.create(name: "Chu", team_name: "Flushing", penalties: 0, strategy: "3")
+CR = Opponent.create(name: "Ken", team_name: "Capital Region", penalties: 0, strategy: "5")
+OAK = Opponent.create(name: "Doho", team_name: "Oakland", penalties: 0, strategy: "3")
+YON = Opponent.create(name: "Jae", team_name: "Yonkers", penalties: 0, strategy: "8")
 
 # RankingPlayer.delete_all
 Ranking.delete_all
