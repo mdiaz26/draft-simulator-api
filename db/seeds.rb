@@ -1,18 +1,28 @@
-VA = Opponent.create(name: "Hua", team_name: "Virginia", penalties: 0, strategy: "4")
-GK = Opponent.create(name: "Dustin", team_name: "Great Kills", penalties: 0, strategy: "4")
-LIC = Opponent.create(name: "Warren", team_name: "LIC", penalties: 0, strategy: "6")
-NE = Opponent.create(name: "Wankyu", team_name: "New England", penalties: 0, strategy: "7")
-MARS = Opponent.create(name: "John", team_name: "Mars", penalties: 0, strategy: "3")
-HAR = Opponent.create(name: "Diaz", team_name: "Harlem", penalties: 0, strategy: "7")
-FLU = Opponent.create(name: "Chu", team_name: "Flushing", penalties: 0, strategy: "3")
-CR = Opponent.create(name: "Ken", team_name: "Capital Region", penalties: 0, strategy: "5")
-OAK = Opponent.create(name: "Doho", team_name: "Oakland", penalties: 0, strategy: "3")
-YON = Opponent.create(name: "Jae", team_name: "Yonkers", penalties: 0, strategy: "8")
+# VA = Opponent.create(name: "Hua", team_name: "Virginia", penalties: 0)
+# GK = Opponent.create(name: "Dustin", team_name: "Great Kills", penalties: 0)
+# LIC = Opponent.create(name: "Warren", team_name: "LIC", penalties: 0)
+# NE = Opponent.create(name: "Wankyu", team_name: "New England", penalties: 0)
+# MARS = Opponent.create(name: "John", team_name: "Mars", penalties: 0)
+# HAR = Opponent.create(name: "Diaz", team_name: "Harlem", penalties: 0)
+# FLU = Opponent.create(name: "Chu", team_name: "Flushing", penalties: 0)
+# CR = Opponent.create(name: "Ken", team_name: "Capital Region", penalties: 0)
+# OAK = Opponent.create(name: "Doho", team_name: "Oakland", penalties: 0)
+# YON = Opponent.create(name: "Jae", team_name: "Yonkers", penalties: 0)
+VA = Opponent.create(name: "Hua", team_name: "Virginia", penalties: 0, strategy: 4)
+GK = Opponent.create(name: "Dustin", team_name: "Great Kills", penalties: 0, strategy: 4)
+LIC = Opponent.create(name: "Warren", team_name: "LIC", penalties: 0, strategy: 6)
+NE = Opponent.create(name: "Wankyu", team_name: "New England", penalties: 0, strategy: 7)
+MARS = Opponent.create(name: "John", team_name: "Mars", penalties: 0, strategy: 3)
+HAR = Opponent.create(name: "Diaz", team_name: "Harlem", penalties: 0, strategy: 7)
+FLU = Opponent.create(name: "Chu", team_name: "Flushing", penalties: 0, strategy: 3)
+CR = Opponent.create(name: "Ken", team_name: "Capital Region", penalties: 0, strategy: 5)
+OAK = Opponent.create(name: "Doho", team_name: "Oakland", penalties: 0, strategy: 3)
+YON = Opponent.create(name: "Jae", team_name: "Yonkers", penalties: 0, strategy: 8)
 
 # RankingPlayer.delete_all
 Ranking.delete_all
 # FranchisePlayer.delete_all
-# Franchise.delete_all
+Franchise.delete_all
 # Draft.delete_all
 
 

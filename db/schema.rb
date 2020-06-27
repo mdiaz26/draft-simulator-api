@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_14_215707) do
+ActiveRecord::Schema.define(version: 2020_05_24_205016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,25 @@ ActiveRecord::Schema.define(version: 2020_05_14_215707) do
     t.integer "draft_position"
     t.boolean "is_nominating"
     t.index ["draft_id"], name: "index_franchises_on_draft_id"
+  end
+
+  create_table "opponent_players", force: :cascade do |t|
+    t.bigint "opponent_id", null: false
+    t.integer "salary"
+    t.bigint "player_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["opponent_id"], name: "index_opponent_players_on_opponent_id"
+    t.index ["player_id"], name: "index_opponent_players_on_player_id"
+  end
+
+  create_table "opponents", force: :cascade do |t|
+    t.string "name"
+    t.integer "bidding_aggression"
+    t.integer "penalties"
+    t.string "team_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "players", force: :cascade do |t|
@@ -89,6 +108,8 @@ ActiveRecord::Schema.define(version: 2020_05_14_215707) do
   add_foreign_key "franchise_players", "franchises"
   add_foreign_key "franchise_players", "players"
   add_foreign_key "franchises", "drafts"
+  add_foreign_key "opponent_players", "opponents"
+  add_foreign_key "opponent_players", "players"
   add_foreign_key "ranking_players", "players"
   add_foreign_key "ranking_players", "rankings"
 end
